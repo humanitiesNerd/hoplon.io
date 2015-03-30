@@ -30,8 +30,9 @@
     (core/with-pre-wrap fs
       (let [in-files (core/input-files fs)
             in-main (first (core/by-name ["app.scss"] in-files))
-            output-dir (.mkdirs (io/file tmp "css"))
-            out (io/file tmp "app.css")]
+            output-dir (io/file tmp "css")
+            out (io/file output-dir "app.css")]
+        (.mkdir output-dir)
         (util/dosh "sass"
           "--sourcemap"
           "--style" (if compressed "compressed" "nested")
