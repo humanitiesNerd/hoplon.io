@@ -23,7 +23,9 @@
   '[adzerk.boot-reload :refer [reload]]
   '[pandeiro.boot-http :refer [serve]]
   '[tailrecursion.boot-hoplon :refer [haml hoplon prerender html2cljs]]
-  '[mathias.boot-sassc :refer [sass]])
+  '[mathias.boot-sassc :refer [sass]]
+)
+
 
 (comment
 (deftask sass
@@ -43,8 +45,8 @@
         (-> fs
           (core/add-resource tmp)
           (core/commit!))))))
-
 )
+
 
 
 (deftask dev
@@ -54,7 +56,7 @@
     (watch)
     (speak)
     (haml)
-    (sass :sass-file "sass/quisquiliae.scss")
+    (sass :sass-file "quisquiliae.scss")
     (hoplon)
     (reload)
     (cljs)))
