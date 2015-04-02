@@ -3,7 +3,7 @@
                    [adzerk/boot-cljs-repl     "0.1.9"]
                    [adzerk/boot-reload        "0.2.6"]
                    [boot/core                 "2.0.0-rc13"]
-                   
+                   [boot-sassc                "0.1.2"]                   
                    [pandeiro/boot-http        "0.6.2"]
                    [markdown-clj              "0.9.63"]
                    [adzerk/boot-cljs          "0.0-2814-0"]
@@ -22,8 +22,10 @@
   '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
   '[adzerk.boot-reload :refer [reload]]
   '[pandeiro.boot-http :refer [serve]]
-  '[tailrecursion.boot-hoplon :refer [haml hoplon prerender html2cljs]])
+  '[tailrecursion.boot-hoplon :refer [haml hoplon prerender html2cljs]]
+  '[mathias.boot-sassc :refer [sass]])
 
+(comment
 (deftask sass
   [c compressed bool "compress the output"]
   (let [tmp (core/temp-dir!)]
@@ -42,6 +44,8 @@
           (core/add-resource tmp)
           (core/commit!))))))
 
+)
+
 
 (deftask dev
   "Build hoplon.io for local development."
@@ -50,6 +54,7 @@
     (watch)
     (speak)
     (haml)
+    (sass :sass-file "sass/quisquiliae.scss")
     (hoplon)
     (reload)
     (cljs)))
