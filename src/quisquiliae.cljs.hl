@@ -42,12 +42,19 @@
     [(a :href "#/community/"  "Community/Contribute") (core/container)]))
 )
 
+(defelem viewport [attr kids] (meta :name "viewport"     :content (first kids)))
+
+(defn setup []
+  (vector
+    (viewport "width=device-width, initial-scale=1.0") 
+    (link :href "css/bootstrap.min.css" :rel "stylesheet" :media "screen") 
+    (link :href "css/starter-template.css" :rel "stylesheet" :media "screen")))
+
 (html
   :lang "en"
   (head
     (html-meta
       :charset "utf-8")
-   ; page-setup
     (html-meta
       :name    "keywords"
       :content "clojure, clojurescript, cqrs, castra, cljson, spa")
@@ -60,7 +67,6 @@
       (a
        :class "topfix"
        :do-scroll-to (cell= route))
-      ;(nav-bar)
       (noscript
         (div
           :class "nojs-error"
@@ -68,11 +74,41 @@
       (header
        (div
         (h1 :class "blog-header" "Quisquiliae")))
-      ;(content-home            :style "display:none" (home/show))
-      ;(content-getting-started :style "display:none" (getting-started/show))
-      ;(content-docs            :style "display:none" (docs/show hdoc hdocs))
-      ;(content-talks           :style "display:none" (talks/show htalk htalks))
-      ;(content-community       :style "display:none" (community/show))
+      (main
+       (article
+        (header
+         (h2 :class "article-title" "About Playground"))
+        (section
+         (header
+          (h3 :class "paragraph-title" "About Playground"))
+         (p
+          "This started as an attempt to implement the linear regression algorithm in
+	  cascalog, following instructions from the famous " (a :href "http://www.cs.stanford.edu/people/ang//papers/nips06-mapreducemulticore.pdf" "article ")
+          "by Andrew Ng and others")
+         (p
+	  (a :href "https://mahout.apache.org/" "Mahout ") "already existed but that is in java and probably lower level
+	  than this.")
+	(p
+	  "This is half a page of code and could be read by an high schooler.")
+	
+	(p
+	  "This is an exercise. In the future I'd like to try to implement the
+	  other algorithms that are discussed there"
+          )
+        (section
+         (header
+          (h3 "The main problem I had")
+          (p "My biggest problem was to understand correctly the mathematical
+	    notation. I was not sure what was supposed to be a matrix and what was
+	    supposed to be a number or a vector. It was a type problem, if you
+	    like, and the language didn't help.")
+          
+          (p "The starting point is the canonical form")
+
+          ))
+
+
+         )))
       )
     ))
 
