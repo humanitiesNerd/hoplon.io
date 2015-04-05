@@ -56,7 +56,7 @@
     (watch)
     (speak)
     (haml)
-    (sass :sass-file "quisquiliae.scss")
+    (sass :sass-file "quisquiliae.scss" :output-dir "css/")
     (hoplon)
     (reload)
     (cljs)))
