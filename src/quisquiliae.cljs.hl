@@ -1,0 +1,92 @@
+(page "quisquiliae.html"
+      (:require-macros
+        [bootstrap.code              :as code])
+      (:require
+        [io.hoplon                   :as hoplon]
+        [io.hoplon.content.home      :as home]
+;        [io.hoplon.content.getting-started :as getting-started]
+;        [io.hoplon.content.docs      :as docs]
+        [io.hoplon.content.talks     :as talks]
+;        [io.hoplon.content.community :as community]
+;        [bootstrap.core              :as core]
+;        [bootstrap.page              :as page]
+        [tailrecursion.hoplon.util   :as hutil]))
+
+(def route (route-cell "#/home/"))
+
+(with-page-load (.. js/window -location reload))
+
+(defelem viewport [attr kids] (html-meta :name "viewport"     :content (first kids)))
+
+(defn setup []
+  (vector
+    (viewport "width=device-width, initial-scale=1.0") 
+    (link :href "css/quisquiliae.css" :rel "stylesheet")
+    (link :href "https://fonts.googleapis.com/css?family=Oswald:400,300,700" :type "text/css" :rel "stylesheet")
+    (link :href "https://fonts.googleapis.com/css?family=EB+Garamond" :type "text/css" :rel "stylesheet")
+    (html-meta :content "https://twitter.com/catonano" :name "author" )
+    ))
+
+(html
+  :lang "en"
+  (head
+    (html-meta
+      :charset "utf-8")
+    (html-meta
+      :name    "keywords"
+      :content "clojure, clojurescript, cqrs, castra, cljson, spa")
+    (html-meta
+      :name    "description"
+      :content "Hoplon provides a number of libraries promoting a simpler model for Clojure/ClojureScript web applications.")
+    (setup)
+    (title "My litle static indie personal blog"))
+  (body :class "c1"
+    (div
+      (a
+       :class "topfix"
+       :do-scroll-to (cell= route))
+      (noscript
+        (div
+          :class "nojs-error"
+          "This page uses JavaScript but it looks like you have it turned off."))
+      (header
+       (div
+        (h1 :class "blog-header" "Quisquiliae")))
+      (main
+       (article
+        (header
+         (h2 :class "article-title" "About Playground"))
+        (section
+         (header
+          (h3 :class "paragraph-title" "About Playground"))
+         (p
+          "This started as an attempt to implement the linear regression algorithm in
+	  cascalog, following instructions from the famous " (a :href "http://www.cs.stanford.edu/people/ang//papers/nips06-mapreducemulticore.pdf" "article ")
+          "by Andrew Ng and others")
+         (p
+	  (a :href "https://mahout.apache.org/" "Mahout ") "already existed but that is in java and probably lower level
+	  than this.")
+	(p
+	  "This is half a page of code and could be read by an high schooler.")
+	
+	(p
+	  "This is an exercise. In the future I'd like to try to implement the
+	  other algorithms that are discussed there"
+          )
+        (section
+         (header
+          (h3 "The main problem I had")
+          (p "My biggest problem was to understand correctly the mathematical
+	    notation. I was not sure what was supposed to be a matrix and what was
+	    supposed to be a number or a vector. It was a type problem, if you
+	    like, and the language didn't help.")
+          
+          (p "The starting point is the canonical form")
+
+          ))
+
+
+         )))
+      )
+    ))
+
