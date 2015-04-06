@@ -65,6 +65,7 @@
   "Build hoplon.io for production deployment."
   []
   (comp
+    (sass :sass-file "quisquiliae.scss" :output-dir "css/")
     (hoplon :pretty-print true)
     (cljs :optimizations :advanced :source-map true)
     (prerender)))
