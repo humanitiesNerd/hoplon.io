@@ -3,7 +3,7 @@
         [bootstrap.code              :as code])
       (:require
         [io.hoplon                   :as hoplon]
-        [io.hoplon.content.home      :as home]
+;        [io.hoplon.content.home      :as home]
 ;        [io.hoplon.content.getting-started :as getting-started]
 ;        [io.hoplon.content.docs      :as docs]
         [io.hoplon.content.talks     :as talks]
@@ -24,6 +24,51 @@
     (link :href "css/quisquiliae.css" :rel "stylesheet")
     (link :href "https://fonts.googleapis.com/css?family=Oswald:400,300,700" :type "text/css" :rel "stylesheet")
     (link :href "https://fonts.googleapis.com/css?family=EB+Garamond" :type "text/css" :rel "stylesheet")
+    (script :src "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" :type "text/javascript")
+    (script :type "text/javascript"
+            ;;{{
+            <!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        \"HTML-CSS\": {
+             scale: 133,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+                              /*]]>*///-->
+
+                              ;;}}
+                              )
     (html-meta :content "https://twitter.com/catonano" :name "author" )
     ))
 
@@ -72,21 +117,23 @@
 	(p
 	  "This is an exercise. In the future I'd like to try to implement the
 	  other algorithms that are discussed there"
-          )
+          ))
         (section
          (header
-          (h3 "The main problem I had")
-          (p "My biggest problem was to understand correctly the mathematical
+          (h3 "The main problem I had"))
+          (p
+           "My biggest problem was to understand correctly the mathematical
 	    notation. I was not sure what was supposed to be a matrix and what was
 	    supposed to be a number or a vector. It was a type problem, if you
 	    like, and the language didn't help.")
           
           (p "The starting point is the canonical form")
 
+           ;;{{
+                 \begin{equation}
+                 \theta^{*} = A^{-1}b 
+                 \end{equation}
+             ;;}}
           ))
-
-
-         )))
-      )
-    ))
+)))))
 
