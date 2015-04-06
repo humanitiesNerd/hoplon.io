@@ -14,41 +14,18 @@
 
 (def route (route-cell "#/home/"))
 
-(defc hdocs    {:cur nil :toc []})
-(defc htalks   {:cur nil :toc []})
-
-(def hdoc    (partial hoplon/gs-block :toc hdocs  :type :primary))
-(def htalk   (partial hoplon/gs-block :toc htalks  :type :info))
-
-
 (with-page-load (.. js/window -location reload))
 
-(comment
-(def-values
-  [page-setup
-   nav-bar
-   content-home
-   content-getting-started
-   content-docs
-   content-talks
-   content-community]
-  (page/navbar-fixed-top
-    route
-    "Hoplon"
-    [(a :href "#/home/"                       "Home") (div)]
-    [(a :href "#/getting-started/" "Getting Started") (core/container)]
-    [(a :href "#/docs/"                       "Docs") (core/container)]
-    [(a :href "#/talks/"            "Talking Hoplon") (core/container)]
-    [(a :href "#/community/"  "Community/Contribute") (core/container)]))
-)
-
-(defelem viewport [attr kids] (meta :name "viewport"     :content (first kids)))
+(defelem viewport [attr kids] (html-meta :name "viewport"     :content (first kids)))
 
 (defn setup []
   (vector
     (viewport "width=device-width, initial-scale=1.0") 
-    (link :href "css/bootstrap.min.css" :rel "stylesheet" :media "screen") 
-    (link :href "css/starter-template.css" :rel "stylesheet" :media "screen")))
+    (link :href "css/quisquiliae.css" :rel "stylesheet")
+    (link :href "https://fonts.googleapis.com/css?family=Oswald:400,300,700" :type "text/css" :rel "stylesheet")
+    (link :href "https://fonts.googleapis.com/css?family=EB+Garamond" :type "text/css" :rel "stylesheet")
+    (html-meta :content "https://twitter.com/catonano" :name "author" )
+    ))
 
 (html
   :lang "en"
@@ -61,8 +38,9 @@
     (html-meta
       :name    "description"
       :content "Hoplon provides a number of libraries promoting a simpler model for Clojure/ClojureScript web applications.")
-    (title "Hoplon • A simpler way to program the web with Clojure and ClojureScript"))
-  (body
+    (setup)
+    (title "My litle static indie personal blog"))
+  (body :class "c1"
     (div
       (a
        :class "topfix"
