@@ -24,7 +24,7 @@
     (link :href "css/quisquiliae.css" :rel "stylesheet")
     (link :href "https://fonts.googleapis.com/css?family=Oswald:400,300,700" :type "text/css" :rel "stylesheet")
     (link :href "https://fonts.googleapis.com/css?family=EB+Garamond" :type "text/css" :rel "stylesheet")
-    (script :src "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" :type "text/javascript")
+    (script :src "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
     (script :type "text/javascript"
             ;;{{
             <!--/*--><![CDATA[/*><!--*/
@@ -134,6 +134,31 @@
                  \theta^{*} = A^{-1}b 
                  \end{equation}
              ;;}}
-          ))
+                 )
+
+          (p
+
+           "Keeping in mind that "
+           ;;{{
+           \(X\)
+           ;;}}
+
+           " is the matrix whose rows are training instances, if we set "
+
+           ;;{{
+           \(A\)
+           ;;}}
+
+           " and "
+
+           ;;{{
+           \(b\)
+           ;;}}
+
+           " like this ")
+            
+
+
+          )
 )))))
 
