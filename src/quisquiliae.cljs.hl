@@ -1,12 +1,10 @@
 (page "quisquiliae.html"
-      (:require-macros
-        [bootstrap.code              :as code])
       (:require
-        [io.hoplon                   :as hoplon]
+;        [io.hoplon                   :as hoplon]
 ;        [io.hoplon.content.home      :as home]
 ;        [io.hoplon.content.getting-started :as getting-started]
 ;        [io.hoplon.content.docs      :as docs]
-        [io.hoplon.content.talks     :as talks]
+;        [io.hoplon.content.talks     :as talks]
 ;        [io.hoplon.content.community :as community]
 ;        [bootstrap.core              :as core]
 ;        [bootstrap.page              :as page]
