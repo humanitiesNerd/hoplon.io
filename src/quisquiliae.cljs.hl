@@ -127,7 +127,7 @@
 	    supposed to be a number or a vector. It was a type problem, if you
 	    like, and the language didn't help.")
           
-          (p "The starting point is the canonical form")
+          (p "The starting point is the canonical form"
 
            ;;{{
                  \begin{equation}
