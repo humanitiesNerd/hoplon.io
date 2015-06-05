@@ -1,4 +1,4 @@
-(page "quisquiliae.html"
+(page "index.html"
       (:require
 ;        [io.hoplon                   :as hoplon]
 ;        [io.hoplon.content.home      :as home]
