@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 .blog-header {
   text-align: center; }
 
-a {
+a, a:visited {
   color: #f39c12;
   word-wrap: break-word;
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -236,3 +236,5 @@ p {
       font-size: 30px; }
     .c1 h3 {
       font-size: 25px; } }
+
+/*# sourceMappingURL=quisquiliae.css.map */
